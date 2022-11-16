@@ -10,9 +10,34 @@
 
     <link rel="stylesheet" href="styles.css">
 </head>
+    <script >
+        function uploadFile() {
+            var blobFile = $('#filechooser').files[0];
+            var formData = new FormData();
+            formData.append("fileToUpload", blobFile);
+
+            $.ajax({
+                url: "upload.php",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    // .. hacer algo...
+                },
+                error: function(jqXHR, textStatus, errorMessage) {
+                    console.log(errorMessage); // Opcional
+                }
+            });
+        }
+    </script>
 <body>
 
+    <input type="file" id="filechooser" placeholder="Add Pics”">
+
 <section class="memory-game">
+
+
     <div class="memory-card" data-framework="aurelia">
         <img class="front-face" src="img/Articuno.png" alt="Aurelia" />
         <img class="back-face" src="img/Poké_Ball_icon.svg" alt="JS Badge" />
@@ -97,8 +122,8 @@
         <img class="back-face" src="img/Poké_Ball_icon.svg" alt="JS Badge" />
     </div>
 </section>
-    <div class="mt-4">
-        <button type="button" class="btn btn-success">Success</button>
+    <div class="table table-sm" >
+        <button type="button" class="btn btn-success">Shuffle</button>
     </div>
 
 <script src="scripts.js">
