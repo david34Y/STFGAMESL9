@@ -4,10 +4,10 @@
     box-sizing: border-box;
 }
 
-body {
-    height: 100vh;
-    display: flex;
-    background: #060AB2;
+body{
+    background: radial-gradient(circle,rgba(63,94,251,1)0%,rgba(252,70,107,1)100%);
+    font-family: 'Roboto',sans-serif;
+    color: white;
 }
 
 .memory-game {
@@ -53,3 +53,7 @@ body {
 .front-face {
     transform: rotateY(180deg);
 }
+footer{
+     text-align: center;
+
+ }
